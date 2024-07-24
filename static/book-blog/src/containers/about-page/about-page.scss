@@ -1,0 +1,46 @@
+.about-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+
+  .header {
+    flex: 0 1 auto;
+
+    svg {
+      height: 100%;
+    }
+  }
+
+  .content {
+    flex: 1 1 auto;
+    background: #fffeec;
+    padding: 20px 120px;
+    display: flex;
+    height: 100%;
+
+    .profile-picture {
+      padding: 1em 20px;
+      width: 30%;
+      float: left;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .profle-text {
+      float: right;
+      width: 65%;
+      text-align: left;
+    }
+  }
+  &:after {
+    clear: both;
+  }
+
+  .footer {
+    flex: 0 1 40px;
+    position: relative;
+  }
+}

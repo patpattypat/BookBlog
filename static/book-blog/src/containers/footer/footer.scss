@@ -1,0 +1,28 @@
+.footer {
+  background-color: #145a5f;
+  padding: 20px 120px;
+  justify-content: space-between;
+  display: flex;
+  height: fit-content;
+  color: #efeede;
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+
+  .tag {
+    width: 200px;
+  }
+
+  .menu {
+    display: flex;
+
+    .btn-menu {
+      padding: 0 10px;
+      color: #efeede;
+
+      svg {
+        color: #ee9d98;
+      }
+    }
+  }
+}
