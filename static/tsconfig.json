@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResultion": "node",
+		"lib": ["dom", "dom.iterable", "esnext", "scripthost"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"noUsedLocals": true,
+		"noImplicitReturns": true,
+		"resolveJsonModule": true,
+		"noEmit": true,
+		"jsx": "preserve",
+		"newLine": "lf"
+	}
+}
