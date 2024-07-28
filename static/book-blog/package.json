@@ -1,0 +1,50 @@
+{
+  "name": "book-blog",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "cross-env": "^7.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "cross-env MODE=render react-scripts start",
+    "build": "react-scripts build",
+    "dist": "cross-env PUBLIC_URL=/static/$npm_package_version react-scripts dist",
+    "test": "react-scripts test --coverage",
+    "eject": "react-scripts eject",
+    "format": "react-scripts format",
+    "lint": "react-scripts lint && react-scripts format -c",
+    "lint:fix": "react-scripts lint --fix",
+    "verify": "react-scripts type-check"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
