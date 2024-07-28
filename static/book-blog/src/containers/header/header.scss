@@ -1,0 +1,19 @@
+.header{
+	background-color: #ff0000;
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+	position: fixed;
+	z-index: 99;
+	height: fit-content;
+	
+	.menu{
+		display: flex;
+		justify-content: space-around;
+		width: 50%;
+		
+		.btn-menu{
+			gap: 12px;
+		}
+	}
+}
