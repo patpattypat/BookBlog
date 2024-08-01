@@ -1,19 +1,29 @@
 .header{
-	background-color: #ff0000;
+	background-color: #145A5F;
 	width: 100%;
-	justify-content: space-between;
+	padding: 20px 0;
+	flex-direction: column-reverse;
 	display: flex;
-	position: fixed;
+	position: sticky;
 	z-index: 99;
 	height: fit-content;
+	color: #efeede;
 	
 	.menu{
 		display: flex;
-		justify-content: space-around;
-		width: 50%;
+		justify-content: center;
+		width: 100%;
 		
 		.btn-menu{
-			gap: 12px;
+			padding: 0 10px;
+			color: #efeede;
+		}
+	}
+	.logo{
+		display: contents;
+		
+		svg{
+			max-width: 800px;
 		}
 	}
 }
