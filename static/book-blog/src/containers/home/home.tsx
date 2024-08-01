@@ -1,5 +1,6 @@
 import React from 'react';
 import {Header} from '../header';
+import {Footer} from '../footer';
 import './home.scss';
 import { useNavigate } from 'react-router-dom';
 
@@ -56,6 +57,7 @@ export const Home: React.FC = () => {
 					</div>
 				</div> 
 			</div >
+			<Footer />
 		</div>
 	);
 }

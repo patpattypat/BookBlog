@@ -6,3 +6,4 @@ export { Cards } from './cards';
 export { CurrentEvents } from './current-events';
 export { Library } from './library';
 export { Header } from './header';
+export { Footer } from './footer';
