@@ -1,5 +1,60 @@
 .home{
 	.content{
 		padding-top: 20px;
+		
+		.grid-container {
+		  	display: grid;
+			grid-gap: 5px;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			grid-auto-rows: 150px;
+			grid-auto-flow: dense;
+			
+			> div{
+				display: fley;
+				justify-content: center;
+				align-items: center;
+				font-size: 2em;
+				color: #ffeead;
+				
+				> img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			
+			.horizontal{
+				grid-column: span 2;
+			}
+			
+			.vertical{
+				grid-row: span 2;
+			}
+			
+			.big{
+				grid-column: span 2;
+				grid-row: span 2;
+			}
+			
+			.grid-item{
+				position: relative;
+				
+				img{
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+				
+				span{
+					position: absolute;
+					text-align: center;
+					align-content: center;
+					width: 100%;
+					top: 0;
+					left: 0;
+					height: 100%;
+				}
+			}
+		}
 	}
 }
