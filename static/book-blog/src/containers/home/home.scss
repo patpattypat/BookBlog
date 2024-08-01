@@ -1,6 +1,7 @@
-.home{
+.home{	
 	.content{
-		padding-top: 20px;
+		background: #fffeec;
+		padding: 20px 120px;
 		
 		.grid-container {
 		  	display: grid;
@@ -45,7 +46,7 @@
 					top: 0;
 				}
 				
-				span{
+				button{
 					position: absolute;
 					text-align: center;
 					align-content: center;
@@ -53,6 +54,17 @@
 					top: 0;
 					left: 0;
 					height: 100%;
+					background: rgba(255,255,255,0.5);
+					border: none;
+					
+					span{
+						font-size: 2em;
+						color: #ffeead;
+					}
+					
+					&:hover{
+						cursor: pointer; 
+					}
 				}
 			}
 		}

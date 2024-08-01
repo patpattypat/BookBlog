@@ -7,7 +7,9 @@ export const Header: React.FC = () => {
 	return (
 		<div className="header">
 			<div className="logo">
-				<Heaader />
+				<Link className="btn btn-home" to="/">
+					<Heaader />
+				</Link>
 			</div>
 			<div className="menu">
 				<Link className="btn btn-menu" to="/about">About</Link>

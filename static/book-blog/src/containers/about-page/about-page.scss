@@ -1,0 +1,25 @@
+.about-page{	
+	.content{
+		background: #fffeec;
+		padding: 20px 120px;
+		display: flex;
+		
+		.profile-picture{
+			padding: 0 20px;
+			width: 30%;
+			float: left;
+			
+			img{
+				width: 100%;
+			}
+		}
+		
+		.profle-text{
+			float: right;
+			width: 65%;
+		}
+	}
+	&:after{
+		clear: both;
+	}
+}
