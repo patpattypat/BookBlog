@@ -12,10 +12,15 @@ export const Header: React.FC = () => {
 				</Link>
 			</div>
 			<div className="menu">
-				<Link className="btn btn-menu" to="/about">About</Link>
-				<Link className="btn btn-menu" to="/library">Bibliothek</Link>
-				<Link className="btn btn-menu" to="/cards">Karten</Link>
+				<Link className="btn btn-menu" to="/">Home</Link>
+				<div className="divider" >&bull; </div>
+				<Link className="btn btn-menu" to="/autorin">Autorin</Link>
+				<div className="divider"  >&bull; </div>
 				<Link className="btn btn-menu" to="/blog">Blog</Link>
+				<div className="divider" >&bull; </div>
+				<Link className="btn btn-menu" to="/bibliothek">Bibliothek</Link>
+				<div className="divider" >&bull; </div>
+				<Link className="btn btn-menu" to="/karten">Karten</Link>
 			</div>
 		</div>
 	);

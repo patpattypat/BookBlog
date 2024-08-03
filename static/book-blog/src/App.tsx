@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {Home, AboutPage, BlogPage, Cards, CurrentEvents, Library, StoryPage} from './containers';
+import {Home, AboutPage, BlogPage, Cards, News, Library, StoryPage} from './containers';
 import './App.css';
 
 function App() {
@@ -10,11 +10,11 @@ function App() {
       	<BrowserRouter>
 		  	<Routes>
 				<Route path="/" Component={Home} />
-				<Route path="/about" Component={AboutPage} />
+				<Route path="/autorin" Component={AboutPage} />
 				<Route path="/blog" Component={BlogPage} />
-				<Route path="/cards" Component={Cards} />
-				<Route path="/current" Component={CurrentEvents} />
-				<Route path="/library" Component={Library} />
+				<Route path="/karten" Component={Cards} />
+				<Route path="/news" Component={News} />
+				<Route path="/bibliothek" Component={Library} />
 				<Route path="/stories" Component={StoryPage} />
 			</Routes>
 		</BrowserRouter>

@@ -1,0 +1,25 @@
+.list-entry{
+	display: flex;
+	padding: 20px 120px;
+	
+	.image{
+		float: left;
+		width: 40%;
+		padding-right: 70px;
+		img{
+			width: 100%;
+		}
+	}
+	.text {
+		float: right;
+		width: 60%;
+		text-align: left;
+		p{
+			margin: 0;
+		}
+	}
+
+	&:after{
+		clear: both;
+	}
+}
