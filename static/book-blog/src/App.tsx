@@ -15,7 +15,7 @@ function App() {
 				<Route path="/karten" Component={Cards} />
 				<Route path="/news" Component={News} />
 				<Route path="/bibliothek" Component={Library} />
-				<Route path="/stories/:storyId" Component={StoryPage} />
+				<Route path="/bibliothek/:storyId" Component={StoryPage} />
 			</Routes>
 		</BrowserRouter>
     </div>
