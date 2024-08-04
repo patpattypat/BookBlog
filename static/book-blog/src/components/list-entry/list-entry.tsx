@@ -1,15 +1,43 @@
 import React from 'react';
-import { LoremIpsum } from 'react-lorem-ipsum';
 import './list-entry.scss';
 
-export const ListEntry: React.FC = () => {
+interface IListEntryPropsTex extends IListEntryPropsBase {
+	date: string;
+	title: string;
+}
+
+interface IListEntryPropsImg extends IListEntryPropsBase {
+	imageUrl: string;
+}
+
+interface IListEntryPropsBase {
+	text: string;
+};
+
+export const ListEntry: React.FC<IListEntryPropsTex | IListEntryPropsImg> = (props) => {
 	return (
 		<div className="list-entry">
-			<div className="image">
-				<img src="home-pictures/small-1.jpg" alt="small img"/>
-			</div>
+			{
+				'date' in props && 'title' in props && (
+					<div className="details">
+						<div className="date">
+							Date: {props.date}
+						</div>
+						<div className="title" >
+							{props.title}
+						</div>
+					</div>
+				)
+			}
+			{
+				'imageUrl' in props && (
+					<div className="image">
+						<img src={props.imageUrl} alt="small img"/>
+					</div>
+				)			
+			}
 			<div className="text">
-				<LoremIpsum p={1} />
+				{props.text}
 			</div>
 		</div>
 	);

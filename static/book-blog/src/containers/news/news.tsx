@@ -1,7 +1,7 @@
 import React from 'react';
 import {Header} from '../header';
 import {Footer} from '../footer';
-import {ListEntry} from '../../components';
+import {NewsList} from '../../components';
 
 export const News: React.FC = () => {
 	return (
@@ -10,12 +10,7 @@ export const News: React.FC = () => {
 			<Header />
 	
 			<div className="content">
-				<ListEntry />
-				<ListEntry />
-				<ListEntry />
-				<ListEntry />
-				<ListEntry />
-				<ListEntry />
+				<NewsList />
 			</div>
 	
 			<Footer />

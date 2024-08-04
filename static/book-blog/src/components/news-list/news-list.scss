@@ -1,0 +1,17 @@
+.news-list{
+	background: #fffeec;
+	
+	&__title{
+	font-size: 60px;
+	padding: 30px 0;
+	}
+
+	.list-entry:nth-child(odd) {
+	      background: #fff3c7;
+		  flex-direction: row-reverse;
+		  
+		  .image, .details{
+		  	padding: 0 0 0 70px;
+		  }
+	}
+}

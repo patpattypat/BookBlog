@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
 				  	<div className="grid-item vertical">
 					 	<img src="home-pictures/vertical-1.jpg" alt="vertical img 1" />
 						<button type="button" className="btn btn-grid" onClick={() => navigate("/news")} >
-							<span className="text aktuelles">News</span>
+							<span className="text aktuelles">Events und Neuigkeiten</span>
 						</button>
 					</div>
 				  	<div className="grid-item big">
