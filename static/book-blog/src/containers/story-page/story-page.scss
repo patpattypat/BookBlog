@@ -1,0 +1,13 @@
+.story-page{
+	background: #fffeec;
+	height: fit-content;
+	
+	&__title{
+	font-size: 60px;
+	padding: 30px 0;
+	}
+	
+	&__content{
+		text-align: left;
+	}
+}
