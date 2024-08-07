@@ -1,0 +1,46 @@
+.blog-list{
+	background: #fffeec;
+	
+	&__title{
+	font-size: 60px;
+	padding: 30px 0;
+	}
+
+	.list-entry:nth-child(odd) {
+		      background: #fff3c7;
+			  grid-template-columns: 60% 40%;
+			  
+			  .image {
+					grid-area: right1;
+			  		grid-column: 2;
+					padding: 0 0 0 70px;
+			  }
+			  
+			  .details {
+				grid-area: left1;
+				grid-column: 1;
+			  }
+		}
+
+		.list-entry{
+		grid-template-areas:
+		                "left1 right1"
+		                "left2 right2"; /* Define the areas and their order */
+
+			.details {
+				grid-area: right1;
+				grid-column: 2;
+				padding: 0;
+			}
+
+			.image {
+				grid-area: left1;
+				grid-column: 1;
+			}
+
+
+			.text{
+				grid-column:  1 / -1;
+			}
+		}
+}

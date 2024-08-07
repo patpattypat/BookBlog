@@ -8,10 +8,21 @@
 
 	.list-entry:nth-child(odd) {
 	      background: #fff3c7;
-		  flex-direction: row-reverse;
+
+		  grid-template-columns: 60% 40%;
+		  grid-template-areas:
+		                  "right left1"
+		                  "right left1"; /* Define the areas and their order */
 		  
 		  .image, .details{
-		  	padding: 0 0 0 70px;
+				grid-area: left1;
+		  		grid-column: 2;
+				padding: 0 0 0 70px;
+		  }
+		  
+		  .text{
+				grid-area: right;
+				grid-column: 1;
 		  }
 	}
 }

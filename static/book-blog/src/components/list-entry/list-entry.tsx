@@ -1,20 +1,14 @@
 import React from 'react';
 import './list-entry.scss';
 
-interface IListEntryPropsTex extends IListEntryPropsBase {
-	date: string;
-	title: string;
-}
-
-interface IListEntryPropsImg extends IListEntryPropsBase {
-	imageUrl: string;
-}
-
-interface IListEntryPropsBase {
+interface IListEntryProps {
 	text: string;
+	imageUrl?: string;
+	date?: string;
+	title?: string;
 };
 
-export const ListEntry: React.FC<IListEntryPropsTex | IListEntryPropsImg> = (props) => {
+export const ListEntry: React.FC<IListEntryProps> = (props) => {
 	return (
 		<div className="list-entry">
 			{
