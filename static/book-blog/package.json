@@ -27,9 +27,9 @@
     "dist": "cross-env PUBLIC_URL=/static/$npm_package_version react-scripts dist",
     "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
-    "format": "react-scripts format",
-    "lint": "react-scripts lint && react-scripts format -c",
-    "lint:fix": "react-scripts lint --fix",
+    "prettier": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "verify": "react-scripts type-check"
   },
   "eslintConfig": {
@@ -48,6 +48,16 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
     ]
   },
   "devDependencies": {

@@ -1,28 +1,29 @@
-.news-list{
-	background: #fffeec;
-	
-	&__title{
-	font-size: 60px;
-	padding: 30px 0;
-	}
+.news-list {
+  background: #fffeec;
 
-	.list-entry:nth-child(odd) {
-	      background: #fff3c7;
+  &__title {
+    font-size: 60px;
+    padding: 30px 0;
+  }
 
-		  grid-template-columns: 60% 40%;
-		  grid-template-areas:
-		                  "right left1"
-		                  "right left1"; /* Define the areas and their order */
-		  
-		  .image, .details{
-				grid-area: left1;
-		  		grid-column: 2;
-				padding: 0 0 0 70px;
-		  }
-		  
-		  .text{
-				grid-area: right;
-				grid-column: 1;
-		  }
-	}
+  .list-entry:nth-child(odd) {
+    background: #fff3c7;
+
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+      "right left1"
+      "right left1"; /* Define the areas and their order */
+
+    .image,
+    .details {
+      grid-area: left1;
+      grid-column: 2;
+      padding: 0 0 0 70px;
+    }
+
+    .text {
+      grid-area: right;
+      grid-column: 1;
+    }
+  }
 }

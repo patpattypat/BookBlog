@@ -1,30 +1,30 @@
-.header{
-	background-color: #145A5F;
-	width: 100%;
-	padding: 20px 0;
-	flex-direction: column;
-	display: flex;
-	position: sticky;
-	z-index: 99;
-	height: fit-content;
-	color: #efeede;
-	
-	.menu{
-		display: flex;
-		justify-content: center;
-		width: 100%;
-		
-		.btn-menu{
-			padding: 0 10px;
-			color: #efeede;
-		}
-	}
-	.logo{
-		display: contents;
-		
-		svg{
-			max-width: 800px;			
-			align-self: center;
-		}
-	}
+.header {
+  background-color: #145a5f;
+  width: 100%;
+  padding: 20px 0;
+  flex-direction: column;
+  display: flex;
+  position: sticky;
+  z-index: 99;
+  height: fit-content;
+  color: #efeede;
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .btn-menu {
+      padding: 0 10px;
+      color: #efeede;
+    }
+  }
+  .logo {
+    display: contents;
+
+    svg {
+      max-width: 800px;
+      align-self: center;
+    }
+  }
 }
