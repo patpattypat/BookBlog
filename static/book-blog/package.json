@@ -24,13 +24,17 @@
   "scripts": {
     "start": "cross-env MODE=render react-scripts start",
     "build": "react-scripts build",
-    "dist": "cross-env PUBLIC_URL=/static/$npm_package_version react-scripts dist",
     "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "prettier": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "verify": "react-scripts type-check"
+    "verify": "flow"
+  },
+  "options": {
+    "assets": [
+      "src/assets/*"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +66,8 @@
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
-    "eslint-config-react": "^1.1.7"
+    "eslint-config-react": "^1.1.7",
+    "flow-bin": "^0.245.2",
+    "prettier": "3.3.3"
   }
 }

@@ -1,5 +1,4 @@
-.library {
-  background: #fffeec;
+.maps {
   width: 100%;
   height: 100%;
   display: flex;
@@ -13,14 +12,10 @@
     }
   }
 
-  &__title {
-    font-size: 60px;
-    padding: 30px 0;
-  }
-
   .content {
-    padding: 20px 120px;
     flex: 1 1 auto;
+    background: #fffeec;
+    padding: 20px 120px;
     height: 100%;
 
     .grid-container {
@@ -30,8 +25,7 @@
       grid-auto-rows: 170px;
       grid-auto-flow: dense;
 
-      > .grid-item {
-        position: relative;
+      > div {
         display: fley;
         justify-content: center;
         align-items: center;
@@ -42,30 +36,29 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          position: absolute;
-          left: 0;
-          top: 0;
         }
+      }
 
-        button {
+      .horizontal {
+        grid-column: span 2;
+      }
+
+      .vertical {
+        grid-row: span 2;
+      }
+
+      .big {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .grid-item {
+        position: relative;
+
+        img {
           position: absolute;
-          text-align: center;
-          align-content: center;
-          width: 100%;
-          top: 0;
           left: 0;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.5);
-          border: none;
-
-          span {
-            font-size: 2em;
-            // color: #ffeead;
-          }
-
-          &:hover {
-            cursor: pointer;
-          }
+          top: 0;
         }
       }
     }

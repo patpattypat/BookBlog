@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Run this project locally
+
+Install node (or nvm and node) and yarn then run `yarn install` to install all necessary packages.
+Then you can run any of the scripts below.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -16,7 +21,7 @@ You will also see any lint errors in the console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode and with coverage.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
@@ -28,6 +33,14 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn prettier`
+
+This command cleans the code and makes it more readable.
+
+### `yarn lint`
+
+This command shows linting issues. We use `flow` for this. For more details, please check [the official flow documentation](https://reactalt.org/docs/static-type-checking.html).
 
 ### `yarn eject`
 
