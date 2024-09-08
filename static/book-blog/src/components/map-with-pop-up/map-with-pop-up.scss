@@ -1,0 +1,17 @@
+.map-with-pop-up {
+  width: 100%;
+  height: 100%;
+
+  .btn-map {
+    height: inherit;
+    width: inherit;
+    border: 0;
+    background: 0;
+    cursor: pointer;
+
+    img {
+      height: inherit;
+      width: inherit;
+    }
+  }
+}

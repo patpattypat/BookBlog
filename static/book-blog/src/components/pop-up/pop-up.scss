@@ -1,0 +1,25 @@
+.pop-up {
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  width: 70%;
+  z-index: 99;
+  background: white;
+  border: black solid 1px;
+
+  &-title {
+    font-size: 20px;
+  }
+
+  .btn-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
