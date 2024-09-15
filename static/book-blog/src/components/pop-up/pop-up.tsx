@@ -1,4 +1,3 @@
-import map1 from "../../assets/map1.jpg";
 import "./pop-up.scss";
 
 interface IPopUpProps {
@@ -19,7 +18,7 @@ export const PopUp: React.FC<IPopUpProps> = ({ onClose, image, title }) => {
       >
         x
       </button>
-      <img src={image} alt="pop-up of map image" />
+      <img src={image} alt={image} />
     </div>
   );
 };
