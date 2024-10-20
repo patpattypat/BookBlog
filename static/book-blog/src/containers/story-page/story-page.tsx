@@ -1,9 +1,8 @@
 import React from "react";
 import { Header } from "../header";
 import { Footer } from "../footer";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { LoremIpsum } from "react-lorem-ipsum";
-import { useNavigate } from "react-router-dom";
 import "./story-page.scss";
 
 export const StoryPage: React.FC = () => {
