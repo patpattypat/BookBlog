@@ -23,7 +23,6 @@
       flex: 1; /* Takes the remaining space */
       display: flex;
       flex-direction: column;
-      //	padding: 30px 0;
 
       &__title {
         font-size: 60px;
@@ -37,7 +36,6 @@
 
     .btn-back {
       width: fit-content;
-      align: center;
     }
 
     @media (max-width: 768px) {

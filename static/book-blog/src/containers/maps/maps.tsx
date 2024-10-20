@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { Header } from "../header";
 import { Footer } from "../footer";
 import { MapWithPopUp, PopUp } from "../../components";
-import { useState, useCallback } from "react";
 import map1 from "../../assets/map1.jpg";
 import map2 from "../../assets/map2.jpg";
 import "./maps.scss";
