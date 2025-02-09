@@ -5,36 +5,52 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   sonarqube:
-    name: SonarQube
+    name: SonarCloud Analysis
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0  
-      - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@v4
-        env: 
+
+      - name: ❇️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install dependencies
+        run: |
+          cd static/book-blog  # Navigate to the correct directory
+          yarn install
+
+      - name: 📦 Run tests and generate coverage
+        run: |
+          cd static/book-blog  # Navigate to the correct directory
+          yarn test --coverage
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-		with:
-		  projectBaseDir: static/
-		  
-	name: ❇️ Setup Nodejs
-		  uses: actions/setup-node@v3.5.1
-		  
-  	name: 📦 Install dependencies
-          run: |
-            yarn install
-		    
-  	name: 📦 Run tests
-		run: |
-        	yarn test
-		  
-  	name: Build and analyze
-          env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          run: mvn verify sonar:sonar \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.organization=patpattypat \
+        with:
+          projectBaseDir: .
+          args: |
             -Dsonar.projectKey=patpattypat_BookBlog
+            -Dsonar.organization=patpattypat
+            -Dsonar.pullrequest.key=${pr.key}
+            -Dsonar.pullrequest.branch=${pr.branch}
+            -Dsonar.pullrequest.base=${pr.base} 
+    
+            -Dsonar.sources=.
+            -Dsonar.exclusions=**/*.test.tsx
+            -Dsonar.language=ts
+            -Dsonar.lang.patterns.js=**/*.js,**/*.jsx
+            -Dsonar.lang.patterns.ts=**/*.ts,**/*.tsx,**/*.cts,**/*.mts
+            
+            -Dsonar.tests=.
+            -Dsonar.test.inclusions=**/*.test.tsx
+            -Dsonar.javascript.lcov.reportPaths=static/book-blog/coverage/lcov.info
