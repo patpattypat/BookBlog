@@ -30,7 +30,7 @@ describe("home test", () => {
     ["Über mich", "autorin page"],
     ["Blog", "blog page"],
     ["Karten", "karten page"],
-  ]).it("should navigate to %buttonName", (buttonName, expectedContent) => {
+  ]).it("should navigate to %buttonName", (buttonName: string, expectedContent: string) => {
     renderHome();
 
     let buttonElement = screen.getByRole("button", {
