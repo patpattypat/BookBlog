@@ -1,18 +1,30 @@
-import React from "react";
-import { Header } from "../header";
-import { Footer } from "../footer";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../footer";
+import { Header } from "../header";
 import "./library.scss";
+import "bootstrap/dist/css/bootstrap.css";
+import 'bootstrap/dist/js/bootstrap.min.js';
+import FilterDropdown, { FilterOption } from "components/filter/filter";
 
 export const Library: React.FC = () => {
   const navigate = useNavigate();
 
+  const filterOptions: FilterOption[] = [
+    { label: 'cats', value: 'Cats' },
+    { label: 'dogs', value: 'Dogs' },
+    { label: 'other', value: 'other projects' },
+  ];
+
   return (
     <div className="library">
       <Header />
-
       <div className="content">
         <div className="library__title">Kurzgeschichten</div>
+        <div className="filter" >
+          Filter
+          <FilterDropdown filterName={"Projekte"} filterOptions={filterOptions} />
+        </div>
 
         <div className="grid-container">
           <div className="grid-item">

@@ -7,3 +7,4 @@ export { News } from "./news";
 export { Library } from "./library";
 export { Header } from "./header";
 export { Footer } from "./footer";
+export { ComingSoonPage } from "./coming-soon";

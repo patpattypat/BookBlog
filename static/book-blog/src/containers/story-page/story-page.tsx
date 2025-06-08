@@ -25,6 +25,7 @@ export const StoryPage: React.FC = () => {
           <div className="story-details__title">{storyId}</div>
           <div className="story-details__genre">Genre: Fantasy</div>
           <div className="story-details__lenght">Lesedauer: 12min</div>
+          <div className="story-details__project">Projekt: Cat</div>
         </div>
         <div className="story-page__story__image">
           <img src="/home-pictures/vertical-1.jpg" alt="vertical img 1" />

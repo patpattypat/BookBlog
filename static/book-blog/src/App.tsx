@@ -8,6 +8,7 @@ import {
   News,
   Library,
   StoryPage,
+  ComingSoonPage,
 } from "./containers";
 import "./App.css";
 
@@ -23,6 +24,11 @@ function App() {
           <Route path="/news" Component={News} />
           <Route path="/bibliothek" Component={Library} />
           <Route path="/bibliothek/:storyId" Component={StoryPage} />
+          <Route path="/youtube-link" Component={ComingSoonPage} />
+          <Route path="/insta-link" Component={ComingSoonPage} />
+          <Route path="/contact" Component={ComingSoonPage} />
+          <Route path="/impressum" Component={ComingSoonPage} />
+          <Route path="*" Component={Home} />
         </Routes>
       </BrowserRouter>
     </div>
