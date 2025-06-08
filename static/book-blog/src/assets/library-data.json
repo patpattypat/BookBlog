@@ -1,0 +1,53 @@
+{
+  "filterOptions": [
+    {
+      "label": "cats",
+      "value": "Cats"
+    },
+    {
+      "label": "dogs",
+      "value": "Dogs"
+    },
+    {
+      "label": "other",
+      "value": "other projects"
+    }
+  ],
+  "shortStories": [
+    {
+      "image": "home-pictures/vertical-1.jpg",
+      "alt": "vertical img 1",
+      "text": "The Wizard's Guide to Coffee Brewing",
+      "path": "/bibliothek/The-Wizard's-Guide-to-Coffee-Brewing",
+      "class": "cats"
+    },
+    {
+      "image": "home-pictures/big-1.jpg",
+      "alt": "big img 1",
+      "text": "The Chronicles of Narnia: The Wardrobe Strikes Back",
+      "path": "/bibliothek/The-Chronicles-of-Narnia:-The-Wardrobe-Strikes-Back",
+      "class": "dogs"
+    },
+    {
+      "image": "home-pictures/small-3.jpg",
+      "alt": "small img 3",
+      "text": "How to Train Your Human",
+      "path": "/bibliothek/How-to-Train-Your-Human",
+      "class": "other"
+    },
+    {
+      "image": "home-pictures/horizontal-1.jpg",
+      "alt": "horizontal img 1",
+      "text": "The Enchanted Elbow: A Tale of Magic and Awkwardness",
+      "path": "/bibliothek/The-Enchanted-Elbow:-A-Tale-of-Magic-and-Awkwardness",
+      "class": "cats"
+    },
+    {
+      "image": "home-pictures/small-5.jpg",
+      "alt": "small img 5",
+      "text": "The Sorcerer's Incredibly Long To-Do List",
+      "path": "/bibliothek/The-Sorcerer's-Incredibly-Long-To-Do-List",
+      "class": "dogs"
+    }
+  ]
+}

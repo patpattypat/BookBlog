@@ -30,14 +30,17 @@ describe("home test", () => {
     ["Über mich", "autorin page"],
     ["Blog", "blog page"],
     ["Karten", "karten page"],
-  ]).it("should navigate to %buttonName", (buttonName: string, expectedContent: string) => {
-    renderHome();
+  ]).it(
+    "should navigate to %buttonName",
+    (buttonName: string, expectedContent: string) => {
+      renderHome();
 
-    let buttonElement = screen.getByRole("button", {
-      name: buttonName,
-    });
-    fireEvent.click(buttonElement);
+      let buttonElement = screen.getByRole("button", {
+        name: buttonName,
+      });
+      fireEvent.click(buttonElement);
 
-    expect(screen.getByText(expectedContent)).toBeInTheDocument;
-  });
+      expect(screen.getByText(expectedContent)).toBeInTheDocument;
+    },
+  );
 });

@@ -13,6 +13,8 @@ describe("coming-soon test", () => {
       </MemoryRouter>,
     );
 
-    expect(screen.getByText("Baustelle unter Konstruktion")).toBeInTheDocument();
+    expect(
+      screen.getByText("Baustelle unter Konstruktion"),
+    ).toBeInTheDocument();
   });
 });

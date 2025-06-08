@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export type FilterOption = {
   label: string;
@@ -6,24 +6,46 @@ export type FilterOption = {
 };
 
 interface IFilterDropdown {
-    filterName: string
-    filterOptions: FilterOption[]
+  filterName: string;
+  filterOptions: FilterOption[];
+  onChange: (selected: string[]) => void;
 }
 
-const FilterDropdown: React.FC<IFilterDropdown> = ({filterName, filterOptions}) => {
-  const [selectedFilters, setSelectedFilters] = useState<FilterOption[]>([]);
+const FilterDropdown: React.FC<IFilterDropdown> = ({
+  filterName,
+  filterOptions,
+  onChange,
+}) => {
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue = e.target.value;
-    const option = filterOptions.find(opt => opt.value === selectedValue);
-    if (option && !selectedFilters.some(f => f.value === option.value)) {
-      setSelectedFilters([...selectedFilters, option]);
+    const value = e.target.value;
+    if (!selectedFilters.includes(value)) {
+      const updated = [...selectedFilters, value];
+      setSelectedFilters(updated);
+      onChange(
+        updated.map(
+          (filterName) =>
+            filterOptions.find(
+              (filterOption) => filterOption.value === filterName,
+            )!!.label,
+        ),
+      );
     }
-    e.target.value = ''; // reset dropdown
+    e.target.value = "";
   };
 
   const removeFilter = (value: string) => {
-    setSelectedFilters(prev => prev.filter(f => f.value !== value));
+    const updated = selectedFilters.filter((f) => f !== value);
+    setSelectedFilters(updated);
+    onChange(
+      updated.map(
+        (filterName) =>
+          filterOptions.find(
+            (filterOption) => filterOption.value === filterName,
+          )!!.label,
+      ),
+    );
   };
 
   return (
@@ -32,38 +54,18 @@ const FilterDropdown: React.FC<IFilterDropdown> = ({filterName, filterOptions}) 
         <option value="" disabled>
           {filterName}
         </option>
-        {filterOptions.map(opt => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
+        {filterOptions.map((opt) => (
+          <option key={opt.label} value={opt.value}>
+            {opt.value}
           </option>
         ))}
       </select>
 
-      <div style={{ marginTop: '10px' }}>
-        {selectedFilters.map(filter => (
-          <span
-            key={filter.value}
-            style={{
-              display: 'inline-block',
-              padding: '5px 10px',
-              backgroundColor: '#e0e0e0',
-              borderRadius: '20px',
-              marginRight: '8px',
-              marginBottom: '8px',
-            }}
-          >
-            {filter.label}
-            <button
-              onClick={() => removeFilter(filter.value)}
-              style={{
-                marginLeft: '8px',
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              ✕
-            </button>
+      <div style={{ marginTop: "10px" }}>
+        {selectedFilters.map((filter) => (
+          <span key={filter} className="pill">
+            {filter}
+            <button onClick={() => removeFilter(filter)}>✕</button>
           </span>
         ))}
       </div>

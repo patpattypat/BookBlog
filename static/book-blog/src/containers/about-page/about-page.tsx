@@ -15,7 +15,7 @@ export const AboutPage: React.FC = () => {
           <img src="profile-placeholder.jpg" alt="author" />
         </div>
         <div className="profle-text">
-          {(aboutData as {"author": string[]}).author.map((text, idx) => (
+          {(aboutData as { author: string[] }).author.map((text, idx) => (
             <p key={idx}>{text}</p>
           ))}
         </div>
