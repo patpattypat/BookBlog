@@ -15,7 +15,7 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => { }}
+        onChange={() => {}}
       />,
     );
     expect(screen.getByRole("combobox")).toBeInTheDocument();
@@ -27,13 +27,13 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => { }}
+        onChange={() => {}}
       />,
     );
     const select = screen.getByRole("combobox");
     await userEvent.selectOptions(select, "apple");
-    const closeButton = screen.getByRole('button', { name: /✕/i });
-    const pill = closeButton.closest('.pill');
+    const closeButton = screen.getByRole("button", { name: /✕/i });
+    const pill = closeButton.closest(".pill");
     expect(pill).toHaveTextContent(/apple/i);
   });
 
@@ -42,7 +42,7 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => { }}
+        onChange={() => {}}
       />,
     );
     const select = screen.getByRole("combobox");
@@ -56,14 +56,16 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => { }}
+        onChange={() => {}}
       />,
     );
     const select = screen.getByRole("combobox");
     await userEvent.selectOptions(select, "orange");
     const closeButton = screen.getByRole("button", { name: /✕/i });
     await userEvent.click(closeButton);
-    expect(screen.queryByRole("button", { name: /✕/i })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /✕/i }),
+    ).not.toBeInTheDocument();
   });
 
   it("selects an option adds a pill and calls onChange", async () => {
@@ -80,8 +82,8 @@ describe("FilterDropdown", () => {
 
     await user.selectOptions(screen.getByRole("combobox"), "apple");
 
-    const closeButton = screen.getByRole('button', { name: /✕/i });
-    const pill = closeButton.closest('.pill');
+    const closeButton = screen.getByRole("button", { name: /✕/i });
+    const pill = closeButton.closest(".pill");
     expect(pill).toHaveTextContent(/apple/i);
     expect(onChangeMock).toHaveBeenCalledWith(["Apple"]);
   });
@@ -123,7 +125,9 @@ describe("FilterDropdown", () => {
     await user.click(closeBtn);
 
     expect(screen.getAllByText("apple")).toHaveLength(1);
-    expect(screen.queryByRole("button", { name: /✕/i })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /✕/i }),
+    ).not.toBeInTheDocument();
     expect(onChangeMock).toHaveBeenCalledWith([]);
   });
 });
