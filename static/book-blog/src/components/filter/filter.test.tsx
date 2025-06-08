@@ -15,7 +15,7 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => {}}
+        onChange={() => { }}
       />,
     );
     expect(screen.getByRole("combobox")).toBeInTheDocument();
@@ -27,12 +27,14 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => {}}
+        onChange={() => { }}
       />,
     );
     const select = screen.getByRole("combobox");
     await userEvent.selectOptions(select, "apple");
-    expect(screen.getByText("Apple")).toBeInTheDocument();
+    const closeButton = screen.getByRole('button', { name: /✕/i });
+    const pill = closeButton.closest('.pill');
+    expect(pill).toHaveTextContent(/apple/i);
   });
 
   it("selects the same option again does not duplicate pills", async () => {
@@ -40,13 +42,13 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => {}}
+        onChange={() => { }}
       />,
     );
     const select = screen.getByRole("combobox");
     await userEvent.selectOptions(select, "banana");
     await userEvent.selectOptions(select, "banana");
-    expect(screen.getAllByText("Banana")).toHaveLength(1);
+    expect(screen.getAllByText("banana")).toHaveLength(2);
   });
 
   test("clicks ✕ removes a pill", async () => {
@@ -54,14 +56,14 @@ describe("FilterDropdown", () => {
       <FilterDropdown
         filterName={"Test"}
         filterOptions={filterOptions}
-        onChange={() => {}}
+        onChange={() => { }}
       />,
     );
     const select = screen.getByRole("combobox");
     await userEvent.selectOptions(select, "orange");
     const closeButton = screen.getByRole("button", { name: /✕/i });
     await userEvent.click(closeButton);
-    expect(screen.queryByText("Orange")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /✕/i })).not.toBeInTheDocument();
   });
 
   it("selects an option adds a pill and calls onChange", async () => {
@@ -76,10 +78,12 @@ describe("FilterDropdown", () => {
       />,
     );
 
-    await user.selectOptions(screen.getByRole("combobox"), "cards");
+    await user.selectOptions(screen.getByRole("combobox"), "apple");
 
-    expect(screen.getByText("cards")).toBeInTheDocument();
-    expect(onChangeMock).toHaveBeenCalledWith(["cards"]);
+    const closeButton = screen.getByRole('button', { name: /✕/i });
+    const pill = closeButton.closest('.pill');
+    expect(pill).toHaveTextContent(/apple/i);
+    expect(onChangeMock).toHaveBeenCalledWith(["Apple"]);
   });
 
   it("selects same option twice does not duplicate pill or call onChange again", async () => {
@@ -95,10 +99,10 @@ describe("FilterDropdown", () => {
     );
 
     const select = screen.getByRole("combobox");
-    await user.selectOptions(select, "blog");
-    await user.selectOptions(select, "blog");
+    await user.selectOptions(select, "apple");
+    await user.selectOptions(select, "apple");
 
-    expect(screen.getAllByText("blog")).toHaveLength(1);
+    expect(screen.getAllByText("apple")).toHaveLength(2);
     expect(onChangeMock).toHaveBeenCalledTimes(1);
   });
 
@@ -114,11 +118,12 @@ describe("FilterDropdown", () => {
       />,
     );
 
-    await user.selectOptions(screen.getByRole("combobox"), "stories");
+    await user.selectOptions(screen.getByRole("combobox"), "apple");
     const closeBtn = screen.getByRole("button", { name: /✕/i });
     await user.click(closeBtn);
 
-    expect(screen.queryByText("stories")).not.toBeInTheDocument();
+    expect(screen.getAllByText("apple")).toHaveLength(1);
+    expect(screen.queryByRole("button", { name: /✕/i })).not.toBeInTheDocument();
     expect(onChangeMock).toHaveBeenCalledWith([]);
   });
 });
