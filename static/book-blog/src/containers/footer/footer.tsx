@@ -1,27 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./footer.scss";
 import { ReactComponent as Insta } from "./assets/instagram-icon.svg";
 import { ReactComponent as Youtube } from "./assets/youtube-icon.svg";
+import "./footer.scss";
 
 export const Footer: React.FC = () => {
   return (
-    <div className="footer">
+    <footer className="footer" role="contentinfo">
       <div className="tag">Tamara Mileti &copy; 2024</div>
-      <div className="menu">
+      <nav className="menu" aria-label="Footer navigation">
         <Link className="btn btn-menu" to="/impressum">
           Impressum
         </Link>
         <Link className="btn btn-menu" to="/contact">
           Kontakt
         </Link>
-        <Link className="btn btn-menu" to="/insta-link">
-          <Insta />
-        </Link>
-        <Link className="btn btn-menu" to="/youtube-link">
-          <Youtube />
-        </Link>
-      </div>
-    </div>
+        <a
+          className="btn btn-menu"
+          href="/insta-link" //"https://instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <Insta aria-hidden="true" />
+        </a>
+        <a
+          className="btn btn-menu"
+          href="/youtube-link" //"https://youtube.com/..."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
+          <Youtube aria-hidden="true" />
+        </a>
+      </nav>
+    </footer>
   );
 };

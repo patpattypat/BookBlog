@@ -1,49 +1,83 @@
 .story-page {
   background: #fffeec;
+  font-family: "Arial", sans-serif;
 
-  &__story {
-    display: flex;
-    padding: 20px 120px;
-    flex-wrap: wrap;
-    text-align: left;
+  .story-page__story {
+    padding: 2rem;
 
-    &__image {
-      flex: 0 0 30%;
-      padding-left: 70px;
-      display: flex;
-      justify-content: flex-end; /* Align image to the right side */
+    .story-details__title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
 
-      img {
+    .story-content-wrapper {
+      overflow: hidden;
+
+      .story-page__story__image {
+        float: right;
+        width: 30%;
+        max-width: 350px;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          object-fit: cover;
+          display: block;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .story-details,
+      .story-page__story__content {
+        font-size: 1rem;
+        color: #333;
+        text-align: left;
+      }
+
+      .story-details {
+        margin-bottom: 1rem;
+
+        .story-details__genre,
+        .story-details__length,
+        .story-details__project {
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+        }
+      }
+
+      .story-page__story__content {
+        p {
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  .btn-back {
+    margin: 2rem 0;
+    align-self: flex-start;
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+  }
+
+  .no-story {
+    font-size: 1.2rem;
+    color: #900;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .story-content-wrapper {
+      .story-page__story__image {
+        float: none;
         width: 100%;
-        height: auto;
-      }
-    }
-
-    .story-details {
-      flex: 1; /* Takes the remaining space */
-      display: flex;
-      flex-direction: column;
-
-      &__title {
-        font-size: 60px;
-        padding-bottom: 12px;
-      }
-    }
-
-    &:after {
-      clear: both;
-    }
-
-    .btn-back {
-      width: fit-content;
-    }
-
-    @media (max-width: 768px) {
-      &__title,
-      &__genre,
-      &__lenght,
-      &__image {
-        flex: 0 0 100%;
+        margin: 0 0 1.5rem 0;
       }
     }
   }

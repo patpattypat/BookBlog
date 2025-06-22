@@ -1,25 +1,33 @@
 import React from "react";
 import { Header } from "../header";
 import { Footer } from "../footer";
-import { LoremIpsum } from "react-lorem-ipsum";
-import aboutData from "../../assets/about-data.json";
+import { useBookContext } from "context";
 import "./about-page.scss";
 
 export const AboutPage: React.FC = () => {
+  const { author } = useBookContext();
+
   return (
     <div className="about-page">
       <Header />
 
-      <div className="content">
-        <div className="profile-picture">
-          <img src="profile-placeholder.jpg" alt="author" />
-        </div>
-        <div className="profle-text">
-          {(aboutData as { author: string[] }).author.map((text, idx) => (
-            <p key={idx}>{text}</p>
-          ))}
-        </div>
-      </div>
+      {!author || author.length === 0 ? (
+        <main className="content">
+          <p>Author information not available.</p>
+        </main>
+      ) : (
+        <main className="content">
+          <figure className="profile-picture">
+            <img src="profile-placeholder.jpg" alt="Portrait of the author" />
+          </figure>
+
+          <section className="profile-text">
+            {author.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </section>
+        </main>
+      )}
 
       <Footer />
     </div>

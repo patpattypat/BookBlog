@@ -1,46 +1,54 @@
 .about-page {
-  width: 100%;
-  height: 100%;
+  background: #fffeec;
+  font-family: "Arial", sans-serif;
+  color: #145a5f;
+  min-height: 100%;
   display: flex;
-  flex-flow: column;
-
-  .header {
-    flex: 0 1 auto;
-
-    svg {
-      height: 100%;
-    }
-  }
+  flex-direction: column;
 
   .content {
-    flex: 1 1 auto;
-    background: #fffeec;
-    padding: 20px 120px;
     display: flex;
-    height: 100%;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 50px auto;
+    flex-grow: 1;
 
     .profile-picture {
-      padding: 1em 20px;
-      width: 30%;
-      float: left;
+      flex: 0 0 250px;
 
       img {
         width: 100%;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(20, 90, 95, 0.3);
       }
     }
 
-    .profle-text {
-      float: right;
-      width: 65%;
-      text-align: left;
+    .profile-text {
+      flex: 1;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
-  }
-  &:after {
-    clear: both;
   }
 
   .footer {
     flex: 0 1 40px;
     position: relative;
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+
+      .profile-picture {
+        flex: 0 0 auto;
+        width: 150px;
+      }
+
+      .profile-text {
+        text-align: center;
+      }
+    }
   }
 }

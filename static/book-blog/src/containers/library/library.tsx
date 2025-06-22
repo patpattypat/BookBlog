@@ -2,56 +2,62 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../footer";
 import { Header } from "../header";
-import "./library.scss";
+import FilterDropdown from "components/filter/filter";
+import { useBookContext } from "context";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import FilterDropdown, { FilterOption } from "components/filter/filter";
-import data from "../../assets/library-data.json";
+import "./library.scss";
 
 export const Library: React.FC = () => {
   const navigate = useNavigate();
-  const filterOptions = data.filterOptions;
+  const { shortStories, filterOptions } = useBookContext();
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
 
   const handleFilterChange = (filters: string[]) => {
     setActiveFilters(filters);
   };
 
-  // setActiveFilters triggers rerender which updates the filteredItems
-  const filteredItems = data.shortStories.filter((item) => {
-    if (activeFilters.length === 0) return true;
-    return activeFilters.includes(item.class);
-  });
+  // the setActiveFilters triggers rerender which updates the filteredItems
+  const filteredItems = shortStories.filter(
+    (item) =>
+      activeFilters.length === 0 || activeFilters.includes(item.project),
+  );
 
   return (
     <div className="library">
       <Header />
-      <div className="content">
-        <div className="library__title">Kurzgeschichten</div>
-        <div className="filter">
-          Filter
+
+      <main className="content" aria-label="Kurzgeschichten Übersicht">
+        <h1 className="library__title">Kurzgeschichten</h1>
+        <section className="filter">
+          <span className="filter__label">Filter:</span>
           <FilterDropdown
-            filterName={"Projekte"}
+            filterName="Projekte"
             filterOptions={filterOptions}
             onChange={handleFilterChange}
           />
-        </div>
+        </section>
 
-        <div className="grid-container">
+        <section className="grid-container">
           {filteredItems.map((item, idx) => (
             <div className="grid-item" key={idx}>
-              <img src={item.image} alt={item.alt} />
+              <img
+                className="grid-item__image"
+                src={item.imageUrl}
+                alt={item.imageAlt || item.title}
+              />
               <button
                 type="button"
                 className="btn btn-grid"
-                onClick={() => navigate(item.path)}
+                onClick={() => navigate(`/bibliothek/${item.id}`)}
+                aria-label={`Öffne Kurzgeschichte: ${item.title}`}
               >
-                <span className={`text`}>{item.text}</span>
+                <span className={`text`}>{item.title}</span>
               </button>
             </div>
           ))}
-        </div>
-      </div>
+        </section>
+      </main>
 
       <Footer />
     </div>

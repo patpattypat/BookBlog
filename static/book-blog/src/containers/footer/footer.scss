@@ -1,10 +1,10 @@
 .footer {
   background-color: #145a5f;
-  padding: 20px 120px;
+  color: #efeede;
+  padding: 1.5rem 2rem;
   justify-content: space-between;
   display: flex;
   height: fit-content;
-  color: #efeede;
   width: 100%;
   box-sizing: border-box;
   position: absolute;
@@ -17,12 +17,41 @@
     display: flex;
 
     .btn-menu {
-      padding: 0 10px;
+      text-decoration: none;
       color: #efeede;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
 
       svg {
         color: #ee9d98;
       }
+
+      &:hover,
+      &:focus-visible {
+        background-color: #efeede;
+        color: #145a5f;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 600px) {
+    .menu {
+      flex-direction: column;
+      gap: 0.75rem;
     }
   }
 }

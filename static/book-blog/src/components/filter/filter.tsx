@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
+import "./filter.scss";
 
 export type FilterOption = {
   label: string;
@@ -16,56 +17,64 @@ const FilterDropdown: React.FC<IFilterDropdown> = ({
   filterOptions,
   onChange,
 }) => {
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
-  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value;
-    if (!selectedFilters.includes(value)) {
-      const updated = [...selectedFilters, value];
-      setSelectedFilters(updated);
-      onChange(
-        updated.map(
-          (filterName) =>
-            filterOptions.find(
-              (filterOption) => filterOption.value === filterName,
-            )!!.label,
-        ),
-      );
-    }
-    e.target.value = "";
+  const handleSelect = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const selectedValue = e.target.value;
+      if (!selectedValues.includes(selectedValue)) {
+        const updatedValues = [...selectedValues, selectedValue];
+        console.log(selectedValues, selectedValue);
+        setSelectedValues(updatedValues);
+
+        const selectedLabels = updatedValues
+          .map((val) => filterOptions.find((opt) => opt.value === val)?.label)
+          .filter(Boolean) as string[];
+
+        onChange(selectedLabels);
+      }
+
+      // Reset select by setting value to the default option
+      e.target.selectedIndex = 0;
+    },
+    [selectedValues, setSelectedValues],
+  );
+
+  const removeFilter = (valueToRemove: string) => {
+    const updatedValues = selectedValues.filter((val) => val !== valueToRemove);
+    setSelectedValues(updatedValues);
+
+    const selectedLabels = updatedValues
+      .map((val) => filterOptions.find((opt) => opt.value === val)?.label)
+      .filter(Boolean) as string[];
+
+    onChange(selectedLabels);
   };
 
-  const removeFilter = (value: string) => {
-    const updated = selectedFilters.filter((f) => f !== value);
-    setSelectedFilters(updated);
-    onChange(
-      updated.map(
-        (filterName) =>
-          filterOptions.find(
-            (filterOption) => filterOption.value === filterName,
-          )!!.label,
-      ),
-    );
-  };
+  const getLabel = (value: string) =>
+    filterOptions.find((opt) => opt.value === value)?.label || value;
 
   return (
-    <div>
-      <select onChange={handleSelect} defaultValue="">
-        <option value="" disabled>
-          {filterName}
-        </option>
+    <div className="filter-dropdown">
+      <select onChange={handleSelect}>
+        <option value="">{filterName}</option>
         {filterOptions.map((opt) => (
-          <option key={opt.label} value={opt.value}>
-            {opt.value}
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
           </option>
         ))}
       </select>
 
-      <div style={{ marginTop: "10px" }}>
-        {selectedFilters.map((filter) => (
-          <span key={filter} className="pill">
-            {filter}
-            <button onClick={() => removeFilter(filter)}>✕</button>
+      <div className="selected-filters">
+        {selectedValues.map((value) => (
+          <span key={value} className="pill">
+            {getLabel(value)}
+            <button
+              onClick={() => removeFilter(value)}
+              aria-label={`Remove filter ${getLabel(value)}`}
+            >
+              ✕
+            </button>
           </span>
         ))}
       </div>
