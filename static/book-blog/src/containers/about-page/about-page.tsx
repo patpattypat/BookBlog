@@ -1,6 +1,4 @@
 import React from "react";
-import { Header } from "../header";
-import { Footer } from "../footer";
 import { useBookContext } from "context";
 import "./about-page.scss";
 
@@ -8,15 +6,11 @@ export const AboutPage: React.FC = () => {
   const { author } = useBookContext();
 
   return (
-    <div className="about-page">
-      <Header />
-
+    <main className="about-page">
       {!author || author.length === 0 ? (
-        <main className="content">
-          <p>Author information not available.</p>
-        </main>
+        <p>Author information not available.</p>
       ) : (
-        <main className="content">
+        <div className="about-page__content">
           <figure className="profile-picture">
             <img src="profile-placeholder.jpg" alt="Portrait of the author" />
           </figure>
@@ -26,10 +20,8 @@ export const AboutPage: React.FC = () => {
               <p key={idx}>{paragraph}</p>
             ))}
           </section>
-        </main>
+        </div>
       )}
-
-      <Footer />
-    </div>
+    </main>
   );
 };

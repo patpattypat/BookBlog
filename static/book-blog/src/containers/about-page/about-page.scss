@@ -1,17 +1,6 @@
 .about-page {
-  background: #fffeec;
-  font-family: "Arial", sans-serif;
-  color: #145a5f;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  .content {
+  .about-page__content {
     display: flex;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 50px auto;
-    flex-grow: 1;
 
     .profile-picture {
       flex: 0 0 250px;
@@ -31,24 +20,14 @@
     }
   }
 
-  .footer {
-    flex: 0 1 40px;
-    position: relative;
-  }
-
   @media (max-width: 600px) {
-    .content {
-      flex-direction: column;
-      align-items: center;
+    .profile-picture {
+      flex: 0 0 auto;
+      width: 150px;
+    }
 
-      .profile-picture {
-        flex: 0 0 auto;
-        width: 150px;
-      }
-
-      .profile-text {
-        text-align: center;
-      }
+    .profile-text {
+      text-align: center;
     }
   }
 }

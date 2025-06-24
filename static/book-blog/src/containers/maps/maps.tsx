@@ -1,6 +1,4 @@
 import React, { useState, useCallback } from "react";
-import { Header } from "../header";
-import { Footer } from "../footer";
 import { MapWithPopUp, PopUp } from "../../components";
 import map1 from "../../assets/map1.jpg";
 import map2 from "../../assets/map2.jpg";
@@ -19,9 +17,7 @@ export const Maps: React.FC = () => {
 
   return (
     <div className="maps">
-      <Header />
-
-      <div className="content">
+      <div className="maps__content">
         <div className="grid-item">
           <MapWithPopUp
             onClick={() => selectImage(map1, "map 1")}
@@ -43,8 +39,6 @@ export const Maps: React.FC = () => {
           title={selectedImageTitle}
         />
       )}
-
-      <Footer />
     </div>
   );
 };

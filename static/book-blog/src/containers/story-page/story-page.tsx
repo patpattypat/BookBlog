@@ -1,6 +1,4 @@
 import React, { useCallback } from "react";
-import { Header } from "../header";
-import { Footer } from "../footer";
 import { useParams, useNavigate } from "react-router-dom";
 import { useBookContext } from "context";
 import "./story-page.scss";
@@ -15,9 +13,7 @@ export const StoryPage: React.FC = () => {
   const handleBack = useCallback(() => navigate("/bibliothek"), []);
 
   return (
-    <div className="story-page">
-      <Header />
-
+    <main className="story-page">
       <button
         type="button"
         className="btn btn-back"
@@ -64,8 +60,6 @@ export const StoryPage: React.FC = () => {
       >
         {backText}
       </button>
-
-      <Footer />
-    </div>
+    </main>
   );
 };

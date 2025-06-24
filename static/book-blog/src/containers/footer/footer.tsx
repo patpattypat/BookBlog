@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
         <a
           className="btn btn-menu"
           href="/insta-link" //"https://instagram.com/"
-          target="_blank"
+          //target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
         >
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
         <a
           className="btn btn-menu"
           href="/youtube-link" //"https://youtube.com/..."
-          target="_blank"
+          //target="_blank"
           rel="noopener noreferrer"
           aria-label="YouTube"
         >

@@ -4,19 +4,7 @@
   display: flex;
   flex-flow: column;
 
-  .header {
-    flex: 0 1 auto;
-
-    svg {
-      height: 100%;
-    }
-  }
-
-  .content {
-    flex: 1 1 auto;
-    background: #fffeec;
-    padding: 20px 120px;
-    height: 100%;
+  .maps__content {
     display: flex;
     flex-wrap: wrap;
 
@@ -26,10 +14,5 @@
       width: 320px;
       object-fit: fill;
     }
-  }
-
-  .footer {
-    flex: 0 1 40px;
-    position: relative;
   }
 }
