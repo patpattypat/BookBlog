@@ -11,12 +11,8 @@ describe("footer test", () => {
       </MemoryRouter>,
     );
 
-    ["Impressum", "Kontakt", "instagram-icon.svg", "youtube-icon.svg"].map(
-      (linkName) => {
-        expect(
-          screen.getByRole("link", { name: linkName }),
-        ).toBeInTheDocument();
-      },
-    );
+    ["Impressum", "Kontakt", "Instagram", "YouTube"].map((linkName) => {
+      expect(screen.getByRole("link", { name: linkName })).toBeInTheDocument();
+    });
   });
 });

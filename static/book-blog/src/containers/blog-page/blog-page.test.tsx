@@ -10,8 +10,6 @@ describe("blog-page test", () => {
         <BlogPage />
       </MemoryRouter>,
     );
-    expect(
-      screen.getByRole("link", { name: "header.svg" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("banner")).toBeInTheDocument();
   });
 });

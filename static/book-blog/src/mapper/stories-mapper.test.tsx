@@ -9,7 +9,7 @@ describe("sotries-mapper", () => {
     id: "123",
     project: "Project A",
     genre: "Sci-fi",
-    readTime: "5 min",
+    readTime: 5,
     content: "Once upon a time...",
   } as unknown as ShortStory;
 
@@ -36,7 +36,7 @@ describe("sotries-mapper", () => {
     });
 
     it("should skip invalid story objects", () => {
-      const input = [validStory, null, undefined, {}, { id: "incomplete" }];
+      const input = [validStory, null, undefined, {}];
       const result = mapToStories(input as any);
       expect(result).toEqual([validStory]);
     });

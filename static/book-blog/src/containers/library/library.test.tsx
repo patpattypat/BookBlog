@@ -2,34 +2,56 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Library } from "./library";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { BookProvider } from "context";
+import { filterOptions, shortStories, author } from "mapper";
+
+const mockNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => {
+  const actual = jest.requireActual("react-router-dom");
+  return {
+    ...actual,
+    useNavigate: () => mockNavigate,
+  };
+});
 
 describe("library test", () => {
+  const contextValues = {
+    author,
+    filterOptions,
+    shortStories,
+  };
+
   it("renders", () => {
     render(
-      <MemoryRouter>
-        <Library />
-      </MemoryRouter>,
+      <BookProvider value={contextValues}>
+        <MemoryRouter>
+          <Library />
+        </MemoryRouter>
+      </BookProvider>,
     );
     expect(screen.getAllByRole("img").length).toEqual(5);
   });
+
   it("should navigate to story if clicked", () => {
     render(
-      <MemoryRouter initialEntries={[`/bibliothek`]}>
-        <Routes>
-          <Route path="/bibliothek" element={<Library />} />
-          <Route
-            path="/bibliothek/The-Wizard's-Guide-to-Coffee-Brewing"
-            element={<div>test story page</div>}
-          />
-        </Routes>
-      </MemoryRouter>,
+      <BookProvider value={contextValues}>
+        <MemoryRouter initialEntries={["/bibliothek"]}>
+          <Routes>
+            <Route path="/bibliothek" element={<Library />} />
+          </Routes>
+        </MemoryRouter>
+      </BookProvider>,
     );
 
-    let buttonElement = screen.getByRole("button", {
-      name: `The Wizard's Guide to Coffee Brewing`,
+    const button = screen.getByRole("button", {
+      name: /Öffne Kurzgeschichte: The Sorcerer's Incredibly Long To-Do List/i,
     });
-    fireEvent.click(buttonElement);
 
-    expect(screen.getByText("test story page")).toBeInTheDocument;
+    fireEvent.click(button);
+
+    expect(mockNavigate).toHaveBeenCalledWith(
+      "/bibliothek/The-Sorcerer's-Incredibly-Long-To-Do-List",
+    );
   });
 });

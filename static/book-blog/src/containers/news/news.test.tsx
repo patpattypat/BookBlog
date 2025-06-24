@@ -10,6 +10,6 @@ describe("news test", () => {
         <News />
       </MemoryRouter>,
     );
-    expect(screen.getByRole("link", { name: "header.svg" })).toBeInTheDocument;
+    expect(screen.getByRole("link", { name: "Homepage" })).toBeInTheDocument;
   });
 });

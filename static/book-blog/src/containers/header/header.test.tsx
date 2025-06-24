@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { Header } from "./header";
 import { MemoryRouter } from "react-router-dom";
 
-describe("about-page test", () => {
+describe("header test", () => {
   it("renders", () => {
     render(
       <MemoryRouter>
@@ -11,12 +11,8 @@ describe("about-page test", () => {
       </MemoryRouter>,
     );
 
-    ["header.svg", "Autorin", "Blog", "Bibliothek", "Karten"].map(
-      (linkName) => {
-        expect(
-          screen.getByRole("link", { name: linkName }),
-        ).toBeInTheDocument();
-      },
-    );
+    ["Homepage", "Autorin", "Blog", "Bibliothek", "Karten"].map((linkName) => {
+      expect(screen.getByRole("link", { name: linkName })).toBeInTheDocument();
+    });
   });
 });
