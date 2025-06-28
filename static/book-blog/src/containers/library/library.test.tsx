@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { Library } from "./library";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { BookProvider } from "context";
-import { filterOptions, shortStories, author } from "mapper";
+import { filterOptions, shortStories, author, blogPosts } from "mapper";
 
 const mockNavigate = jest.fn();
 
@@ -20,6 +20,9 @@ describe("library test", () => {
     author,
     filterOptions,
     shortStories,
+    maps: [],
+    news: undefined,
+    blogPosts: undefined,
   };
 
   it("renders", () => {

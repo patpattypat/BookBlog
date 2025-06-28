@@ -2,44 +2,92 @@
   background: #fffeec;
 
   &__title {
-    font-size: 60px;
-    padding: 30px 0;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
   }
 
-  .list-entry:nth-child(odd) {
-    background: #fff3c7;
-    grid-template-columns: 60% 40%;
-
-    .image {
-      grid-area: right1;
-      grid-column: 2;
-      padding: 0 0 0 70px;
-    }
-
-    .details {
-      grid-area: left1;
-      grid-column: 1;
-    }
+  article {
+    margin-bottom: 1rem;
   }
 
   .list-entry {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "left1 right1"
-      "left2 right2"; /* Define the areas and their order */
+      "media content"
+      "media content";
+    grid-template-rows: auto 1fr;
+    padding: 2rem;
+    background: #fffbdb;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
 
-    .details {
-      grid-area: right1;
-      grid-column: 2;
-      padding: 0;
+    &:hover {
+      transform: scale(1.01);
     }
 
     .image {
-      grid-area: left1;
-      grid-column: 1;
+      grid-area: content;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+    }
+
+    .details {
+      grid-area: media;
+      grid-row: 1;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+
+      .date {
+        font-weight: 600;
+      }
+
+      .title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #333;
+      }
     }
 
     .text {
-      grid-column: 1 / -1;
+      grid-area: media;
+      grid-row: 2;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "media"
+        "content";
+      text-align: left;
+
+      .image,
+      .details,
+      .text {
+        grid-column: 1;
+      }
+    }
+  }
+
+  article:nth-child(odd) {
+    .list-entry {
+      background: #fff3c7;
+      grid-template-areas:
+        "content media"
+        "content media";
     }
   }
 }

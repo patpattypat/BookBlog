@@ -2,14 +2,19 @@ import "./map-with-pop-up.scss";
 
 interface IMapPopUpProps {
   onClick: () => void;
-  image: string;
+  imageUrl: string;
+  imageAlt: string;
 }
 
-export const MapWithPopUp: React.FC<IMapPopUpProps> = ({ onClick, image }) => {
+export const MapWithPopUp: React.FC<IMapPopUpProps> = ({
+  onClick,
+  imageUrl,
+  imageAlt,
+}) => {
   return (
     <div className="map-with-pop-up">
       <button type="button" className="btn btn-map" onClick={() => onClick()}>
-        <img src={image} alt={`image of a ${image}`} />
+        <img src={imageUrl} alt={`image of a ${imageAlt}`} />
       </button>
     </div>
   );

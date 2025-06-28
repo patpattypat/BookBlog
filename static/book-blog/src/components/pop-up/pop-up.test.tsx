@@ -12,7 +12,8 @@ describe("pop-up test", () => {
     render(
       <PopUp
         title={mockData.title}
-        image={mockData.image}
+        imageUrl={mockData.image}
+        imageAlt={"image text"}
         onClose={mockData.onClose}
       />,
     );
@@ -32,7 +33,8 @@ describe("pop-up test", () => {
     render(
       <PopUp
         title={mockData.title}
-        image={mockData.image}
+        imageUrl={mockData.image}
+        imageAlt={"image text"}
         onClose={mockData.onClose}
       />,
     );

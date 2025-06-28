@@ -1,0 +1,14 @@
+{
+  "maps": [
+    {
+      "imageUrl": "map1.jpg",
+      "imageAlt": "Map 1",
+      "title": "this is the first map"
+    },
+    {
+      "imageUrl": "map2.jpg",
+      "imageAlt": "Map 2",
+      "title": "this is the second map"
+    }
+  ]
+}

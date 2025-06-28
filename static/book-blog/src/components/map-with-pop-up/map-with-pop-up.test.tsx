@@ -5,7 +5,13 @@ import { MapWithPopUp } from "./map-with-pop-up";
 describe("map-with-pop-up test", () => {
   it("renders image", () => {
     const mockData = { image: "mock-image.json", onClick: jest.fn() };
-    render(<MapWithPopUp image={mockData.image} onClick={mockData.onClick} />);
+    render(
+      <MapWithPopUp
+        imageUrl={mockData.image}
+        imageAlt={`image of a ${mockData.image}`}
+        onClick={mockData.onClick}
+      />,
+    );
 
     const imageElement = screen.getByRole("img", {
       name: `image of a ${mockData.image}`,
@@ -15,7 +21,13 @@ describe("map-with-pop-up test", () => {
 
   it("should call the onClick function if image is pressed", () => {
     const mockData = { image: "mock-image.json", onClick: jest.fn() };
-    render(<MapWithPopUp image={mockData.image} onClick={mockData.onClick} />);
+    render(
+      <MapWithPopUp
+        imageUrl={mockData.image}
+        imageAlt={`image of a ${mockData.image}`}
+        onClick={mockData.onClick}
+      />,
+    );
 
     const buttonElement = screen.getByRole("button", {
       name: `image of a ${mockData.image}`,

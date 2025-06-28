@@ -3,23 +3,32 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Home,
   AboutPage,
-  BlogPage,
   Maps,
-  News,
   Library,
   StoryPage,
   ComingSoonPage,
 } from "./containers";
 import "./App.css";
 import { BookProvider } from "context";
-import { filterOptions, shortStories, author } from "mapper";
+import {
+  news,
+  blogPosts,
+  filterOptions,
+  shortStories,
+  author,
+  maps,
+} from "mapper";
 import { BaseContainer } from "containers/base-container";
+import { BlogList, NewsList } from "components";
 
 function App() {
   const contextValues = {
     author,
     filterOptions,
     shortStories,
+    maps,
+    news,
+    blogPosts,
   };
 
   return (
@@ -47,7 +56,7 @@ function App() {
               path="/blog"
               element={
                 <BaseContainer>
-                  <BlogPage />
+                  <BlogList />
                 </BaseContainer>
               }
             />
@@ -63,7 +72,7 @@ function App() {
               path="/news"
               element={
                 <BaseContainer>
-                  <News />
+                  <NewsList />
                 </BaseContainer>
               }
             />

@@ -7,16 +7,17 @@ export const AboutPage: React.FC = () => {
 
   return (
     <main className="about-page">
-      {!author || author.length === 0 ? (
+      {!author ? (
         <p>Author information not available.</p>
       ) : (
         <div className="about-page__content">
           <figure className="profile-picture">
-            <img src="profile-placeholder.jpg" alt="Portrait of the author" />
+            {/* have image and alt also in Context */}
+            <img src={author.imageUrl} alt={author.imageAlt} />
           </figure>
 
           <section className="profile-text">
-            {author.map((paragraph, idx) => (
+            {author.description.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
           </section>

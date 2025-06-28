@@ -2,14 +2,21 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { StoryPage } from "./story-page";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
-import { filterOptions, shortStories } from "mapper";
+import { blogPosts, filterOptions, shortStories } from "mapper";
 import { BookProvider } from "context";
 
 describe("story-page test", () => {
   const contextValues = {
-    author: ["Paragraph 1 about the author.", "Paragraph 2 about the author."],
+    author: {
+      description: [],
+      imageUrl: "image",
+      imageAlt: "image descripton",
+    },
     filterOptions,
     shortStories,
+    maps: [],
+    news: undefined,
+    blogPosts: undefined,
   };
 
   it("should render", () => {

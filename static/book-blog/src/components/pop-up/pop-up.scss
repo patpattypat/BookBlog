@@ -1,24 +1,67 @@
 .pop-up {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  height: 90%;
-  z-index: 99;
-  background: white;
-  border: black solid 1px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 700px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
   .pop-up-title {
-    font-size: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   .btn-close {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #333;
     cursor: pointer;
+    box-shadow: #145a5f;
+
+    &:focus {
+      outline: 2px solid #145a5f;
+    }
+
+    &:hover {
+      color: #145a5f;
+    }
   }
 
   img {
-    height: inherit;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    max-height: 70vh;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }

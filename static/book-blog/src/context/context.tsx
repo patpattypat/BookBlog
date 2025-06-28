@@ -16,10 +16,33 @@ export interface FilterOption {
   label: string;
 }
 
+export interface Maps {
+  imageUrl: string;
+  imageAlt: string;
+  title: string;
+}
+
+export interface Author {
+  imageUrl: string;
+  imageAlt: string;
+  description: string[];
+}
+
+export interface ListItem {
+  imageUrl?: string;
+  alt?: string;
+  date?: string;
+  title?: string;
+  text: string;
+}
+
 interface IContext {
-  author: string[];
+  author: Author | undefined;
   filterOptions: FilterOption[];
   shortStories: ShortStory[];
+  maps: Maps[];
+  news: ListItem[] | undefined;
+  blogPosts: ListItem[] | undefined;
 }
 
 const BookContext = createContext<IContext | undefined>(undefined);
