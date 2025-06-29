@@ -1,0 +1,34 @@
+{
+  "news": [
+    {
+      "imageUrl": "home-pictures/small-1.jpg",
+      "text": "Breaking news: local cat refuses to attend Zoom meeting. Experts baffled.",
+      "alt": "Event image 1"
+    },
+    {
+      "imageUrl": "home-pictures/small-3.jpg",
+      "text": "Scientists confirm coffee consumption directly correlates with productivity... or at least survival.",
+      "alt": "Event image 2"
+    },
+    {
+      "date": "04.08.2024",
+      "title": "This is an example",
+      "text": "We tried to invent a new holiday but everyone just wanted a nap instead."
+    },
+    {
+      "imageUrl": "home-pictures/big-1.jpg",
+      "text": "In a shocking turn of events, plants declared their independence from gardeners everywhere.",
+      "alt": "Event image 3"
+    },
+    {
+      "imageUrl": "home-pictures/small-2.jpg",
+      "text": "Experts say binge-watching your favorite series is the new cardio. Your couch agrees.",
+      "alt": "Event image 4"
+    },
+    {
+      "date": "10.11.2014",
+      "title": "This is so amazing!",
+      "text": "Aliens called. They want their conspiracy theories back."
+    }
+  ]
+}

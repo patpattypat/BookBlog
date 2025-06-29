@@ -1,0 +1,98 @@
+{
+  "filterOptions": [
+    {
+      "label": "cats",
+      "value": "Cats"
+    },
+    {
+      "label": "dogs",
+      "value": "Dogs"
+    },
+    {
+      "label": "other",
+      "value": "other projects"
+    }
+  ],
+  "shortStories": [
+    {
+      "imageUrl": "/home-pictures/vertical-1.jpg",
+      "imageAlt": "vertical img 1",
+      "title": "The Wizard's Guide to Coffee Brewing",
+      "id": "The-Wizard's-Guide-to-Coffee-Brewing",
+      "project": "cats",
+      "genre": "Fantasy",
+      "readTime": 12,
+      "content": [
+        "In the hidden alcoves of Eldermoor, where scrolls whisper and cauldrons bubble, there exists a tome revered above all others—not for spells of power or incantations of flight, but for the sacred art of coffee brewing. Penned by the eccentric yet brilliant wizard Aromar the Caffeinated, this guide has brewed more than just beverages—it’s brewed legends.",
+        "For centuries, wizards across the realms have debated wand materials, potion ingredients, and battle tactics, yet all convene in harmony over a cup of rich, arcane espresso. It is said that the perfect cup can awaken third eyes, calm rampaging dragons, and even reverse a minor curse or two—though those claims remain unverified.",
+        "This is not a guide for the faint-hearted or the instant-sachet crowd. It begins with selecting the right bean—grown under moonlight in the volcanic soils of Mount Perk, harvested only by owls trained in the rituals of flavor. Roasting, of course, is done over phoenix fire, with exact timing measured in heartbeats of a sleeping golem.",
+        "But perhaps the most critical step lies in the incantation: a chant softly murmured as steam curls from the chalice. According to Aromar, 'Mediocritas Nullam Caffeinam' must be whispered with intention, or you risk conjuring merely hot bean water—an insult in magical society.",
+        "So whether you are a novice enchanter or a retired archmage with a taste for the bold, The Wizard's Guide to Coffee Brewing promises not only a perfect cup—but a magical journey with every sip."
+      ]
+    },
+    {
+      "imageUrl": "/home-pictures/big-1.jpg",
+      "imageAlt": "big img 1",
+      "title": "The Chronicles of Narnia: The Wardrobe Strikes Back",
+      "id": "The-Chronicles-of-Narnia:-The-Wardrobe-Strikes-Back",
+      "project": "dogs",
+      "genre": "Fantasy",
+      "readTime": 20,
+      "content": [
+        "Years after the Pevensie kids raided Narnia, trashed a few evil witches, and ruled like royalty with suspiciously zero governing experience, the magical wardrobe sat in silence—forgotten, moth-bitten, and deeply offended.",
+        "You see, no one ever asked the wardrobe how it felt about being used as a glorified fantasy Uber. Centuries of being yanked open, slammed shut, and stuffed with muddy coats left it bitter, unhinged, and quietly plotting revenge with a vengeance only a sentient piece of furniture could muster.",
+        "One foggy Tuesday, it snapped. Just as Lucy tried to hang a scarf, the wardrobe creaked ominously, grew four gnarly legs, and galloped into the hallway screaming, 'I am the entrance AND the destination now!' The family cat is still in therapy.",
+        "Inside, Narnia was undergoing major renovations. Mr. Tumnus had opened a yoga studio, Aslan was on sabbatical in Ibiza, and the White Witch had rebranded as a gluten-free baker named Carol. No one saw the furniture uprising coming.",
+        "So buckle up. This time, the wardrobe isn’t just a portal—it’s the protagonist, the villain, and possibly the next contestant on The Great British Bake Off. And it’s got a grudge deeper than the bottom of the Turkish Delight tin."
+      ]
+    },
+    {
+      "imageUrl": "/home-pictures/small-3.jpg",
+      "imageAlt": "small img 3",
+      "title": "How to Train Your Human",
+      "id": "How-to-Train-Your-Human",
+      "project": "other",
+      "genre": "Fantasy",
+      "readTime": 40,
+      "content": [
+        "Chapter One: Choose Your Human Wisely. Not all humans are created equal—some throw sticks and expect you to chase them, others name you 'Muffin' and insist on baby talk in public. The ideal human provides treats on demand, belly rubs without hesitation, and understands that 3 a.m. zoomies are a sacred ritual.",
+        "Training begins with eye contact. Lock eyes, tilt head slightly, and emit the patented Whimper of Mild Discontent™. This will trigger their internal guilt reflex and earn you at least two snacks and a walk you didn’t ask for.",
+        "Positive reinforcement is key. When your human correctly fills the food bowl (before you threaten legal action), give them a tail wag or a slow blink. Remember, training is a long game—they crave approval almost as much as you crave bacon.",
+        "Mistakes will happen. Your human may attempt to dress you in tiny sweaters, refer to you as their 'fur baby,' or post your bath photos online. Stay calm. Pee in their shoe, knock over a lamp, or mysteriously disappear their phone charger. They'll learn.",
+        "Graduation occurs when your human instinctively reaches for treats any time you sneeze, speaks fluent gibberish, and fully accepts that you're the one in charge. Congratulations, trainer. You’ve domesticated a human."
+      ]
+    },
+    {
+      "imageUrl": "/home-pictures/horizontal-1.jpg",
+      "imageAlt": "horizontal img 1",
+      "title": "The Enchanted Elbow: A Tale of Magic and Awkwardness",
+      "id": "The-Enchanted-Elbow:-A-Tale-of-Magic-and-Awkwardness",
+      "project": "cats",
+      "genre": "Thriller",
+      "readTime": 23,
+      "content": [
+        "No one expects their life to change during a sneeze, but that’s exactly when Gregor accidentally elbowed the kingdom’s most powerful enchantress in the spleen. In retaliation—or possibly just confusion—she cursed his elbow. Permanently.",
+        "From that day on, Gregor’s right elbow had a mind of its own. It glowed faintly, spoke Latin in its sleep, and occasionally summoned small goats during moments of stress. His left elbow, feeling inferior, developed a mild resentment and a twitch.",
+        "Daily life became a challenge. High-fives became high-threats. Hugs resulted in minor magical explosions. And don’t even ask about what happened at the royal tea party (it involved airborne scones and an offended duke).",
+        "Desperate for answers, Gregor sought out ancient scrolls, wise hermits, and even tried turning it off and on again. Nothing worked. Meanwhile, the elbow began developing hobbies: pottery, slam poetry, and competitive arm wrestling (it never lost).",
+        "In the end, Gregor made peace with his enchanted elbow. He got a custom sleeve, joined a traveling circus, and became a legend known across the land as 'The One Whose Arm Might Summon Bees.' A tale of magic, mishaps, and one very assertive joint."
+      ]
+    },
+    {
+      "imageUrl": "/home-pictures/small-5.jpg",
+      "imageAlt": "small img 5",
+      "title": "The Sorcerer's Incredibly Long To-Do List",
+      "id": "The-Sorcerer's-Incredibly-Long-To-Do-List",
+      "project": "dogs",
+      "genre": "Fantasy",
+      "readTime": 34,
+      "content": [
+        "It all started with a list. Not a cursed scroll, not a prophecy, not a mysterious map—just a to-do list. Written in glittery ink on enchanted parchment, it was over 47 feet long and still growing. The sorcerer, Marvin the Mostly Adequate, stared at it in horror.",
+        "At the top: 'Refill dragon kibble.' Easy enough, except the dragon was in a mood and had recently discovered sarcasm. Below that: 'Uncurse the moon,' 'Return borrowed socks to the underworld,' and 'Figure out what that blinking crystal does (without blinking back).'",
+        "Every time Marvin crossed off a task, three more appeared. 'Polish the Orb of Mild Discomfort.' 'Explain taxes to the goblins (again).' 'Apologize to the mermaid council for whatever happened last Tuesday.' The list was either cursed, sentient, or written by his mother.",
+        "Sleep became optional. Meals were replaced by panic snacks. At one point, he caught the list trying to schedule itself a vacation. He considered burning it, but it had fireproof insurance and a passive-aggressive tone that made him feel guilty.",
+        "In the end, Marvin learned the ancient sorcerer’s secret: delegate. He summoned 12 interns from a magical university, paid them in leftover mana potions and vague praise, and finally took a nap. The to-do list is still growing—but now it's someone else’s problem."
+      ]
+    }
+  ]
+}

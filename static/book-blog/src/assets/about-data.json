@@ -1,0 +1,11 @@
+{
+  "author": [
+    "Hi! I'm Pat, a passionate software developer with 4 years of experience.",
+    "I specialize in React, TypeScript, Java, Spring Boot, Kafka, Openshift and modern clean architecture development practices.",
+    "When I’m not coding, I enjoy travelling and doing sports."
+  ],
+  "authorPicture": {
+    "imageUrl": "profile-placeholder.jpg",
+    "imageAlt": "Portrait of the author. We descibe the author here for everyone who can not see and therefore, does not know what is on the picutre."
+  }
+}

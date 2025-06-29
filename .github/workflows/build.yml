@@ -1,0 +1,99 @@
+name: Book Blog
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  setup:
+    name: Setup Node.js and Install Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: ❇️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Cache Yarn dependencies
+        id: cache-key
+        uses: actions/cache@v4
+        with:
+          path: static/book-blog/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('static/book-blog/yarn.lock') }}  # Cache key based on yarn.lock
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: 📦 Install dependencies
+        run: |
+          cd static/book-blog
+          yarn install --frozen-lockfile
+
+  lint_and_test:
+    name: Run Linting and Tests
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v4
+        with:
+          path: static/book-blog/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('static/book-blog/yarn.lock') }}  # Same cache key as in setup
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Linting
+        run: |
+          cd static/book-blog
+          yarn lint
+      - name: Verify
+        run: |
+          cd static/book-blog
+          yarn verify
+      - name: 📦 Run tests and generate coverage
+        run: |
+          cd static/book-blog
+          yarn test --coverage
+      - name: Upload test coverage as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: static/book-blog/coverage/lcov.info
+
+  sonarqube:
+    name: SonarCloud Analysis
+    runs-on: ubuntu-latest
+    needs: lint_and_test
+    steps:
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: .
+          args: |
+            -Dsonar.projectKey=patpattypat_BookBlog
+            -Dsonar.organization=patpattypat
+            -Dsonar.pullrequest.key=${pr.key}
+            -Dsonar.pullrequest.branch=${pr.branch}
+            -Dsonar.pullrequest.base=${pr.base} 
+    
+            -Dsonar.sources=.
+            -Dsonar.exclusions=**/*.test.tsx
+            -Dsonar.language=ts
+            -Dsonar.lang.patterns.js=**/*.js,**/*.jsx
+            -Dsonar.lang.patterns.ts=**/*.ts,**/*.tsx,**/*.cts,**/*.mts
+            
+            -Dsonar.tests=.
+            -Dsonar.test.inclusions=**/*.test.tsx
+            -Dsonar.javascript.lcov.reportPaths=static/book-blog/coverage/lcov.info
