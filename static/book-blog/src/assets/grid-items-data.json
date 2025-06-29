@@ -1,0 +1,51 @@
+{
+  "gridItems": [
+    {
+      "src": "home-pictures/small-1.jpg",
+      "alt": "Illustration mit Landschaft"
+    },
+    {
+      "src": "home-pictures/small-2.jpg",
+      "alt": "Zweite Illustration mit Landschaft"
+    },
+    {
+      "src": "home-pictures/vertical-1.jpg",
+      "alt": "Porträtbild für Events",
+      "to": "/news",
+      "label": "Events und Neuigkeiten",
+      "className": "vertical"
+    },
+    {
+      "src": "home-pictures/big-1.jpg",
+      "alt": "Illustration einer Bibliothek",
+      "to": "/bibliothek",
+      "label": "Kurzgeschichten",
+      "className": "big"
+    },
+    {
+      "src": "home-pictures/small-3.jpg",
+      "alt": "Illustration über Autorin",
+      "to": "/autorin",
+      "label": "Über mich"
+    },
+    { "src": "home-pictures/small-4.jpg", "alt": "Vierte kleine Illustration" },
+    {
+      "src": "home-pictures/horizontal-1.jpg",
+      "alt": "Horizontales Bild für Blog",
+      "to": "/blog",
+      "label": "Blog",
+      "className": "horizontal"
+    },
+    {
+      "src": "home-pictures/small-5.jpg",
+      "alt": "Kartenillustration",
+      "to": "/karten",
+      "label": "Karten"
+    },
+    {
+      "src": "home-pictures/horizontal-2.jpg",
+      "alt": "Zweites horizontales Bild",
+      "className": "horizontal"
+    }
+  ]
+}

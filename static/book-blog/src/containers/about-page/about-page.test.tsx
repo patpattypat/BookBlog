@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { AboutPage } from "./about-page";
 import { MemoryRouter } from "react-router-dom";
-import { blogPosts, filterOptions, shortStories } from "mapper";
+import { blogPosts, filterOptions, gridItems, shortStories } from "mapper";
 import { BookProvider } from "context";
 
 describe("about-page test", () => {
@@ -20,6 +20,7 @@ describe("about-page test", () => {
     maps: [],
     news: undefined,
     blogPosts: undefined,
+    gridItems: [],
   };
 
   it("renders", () => {

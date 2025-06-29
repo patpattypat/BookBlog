@@ -79,6 +79,20 @@
       .text {
         grid-column: 1;
       }
+      .text {
+        grid-row: 3;
+      }
+      .image {
+        grid-row: 2;
+      }
+
+      article:nth-child(odd) {
+        .list-entry {
+          grid-template-areas:
+            "media"
+            "content";
+        }
+      }
     }
   }
 

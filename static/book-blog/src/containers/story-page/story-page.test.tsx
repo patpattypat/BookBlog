@@ -17,6 +17,7 @@ describe("story-page test", () => {
     maps: [],
     news: undefined,
     blogPosts: undefined,
+    gridItems: [],
   };
 
   it("should render", () => {

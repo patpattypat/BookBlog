@@ -17,6 +17,7 @@ import {
   shortStories,
   author,
   maps,
+  gridItems,
 } from "mapper";
 import { BaseContainer } from "containers/base-container";
 import { BlogList, NewsList } from "components";
@@ -29,7 +30,9 @@ function App() {
     maps,
     news,
     blogPosts,
+    gridItems,
   };
+  console.log(blogPosts);
 
   return (
     <div className="App">

@@ -23,6 +23,7 @@ describe("library test", () => {
     maps: [],
     news: undefined,
     blogPosts: undefined,
+    gridItems: [],
   };
 
   it("renders", () => {

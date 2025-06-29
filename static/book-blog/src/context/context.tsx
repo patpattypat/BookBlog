@@ -35,6 +35,13 @@ export interface ListItem {
   title?: string;
   text: string;
 }
+export interface GridItem {
+  src: string;
+  alt: string;
+  to?: string;
+  label?: string;
+  className?: string;
+}
 
 interface IContext {
   author: Author | undefined;
@@ -43,6 +50,7 @@ interface IContext {
   maps: Maps[];
   news: ListItem[] | undefined;
   blogPosts: ListItem[] | undefined;
+  gridItems: GridItem[];
 }
 
 const BookContext = createContext<IContext | undefined>(undefined);
